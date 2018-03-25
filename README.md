@@ -25,6 +25,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* I must tip my hat to user **petercat12** for creating the very helpful pysmash library
+* I must tip my hat to user [petercat12](https://github.com/petercat12) for creating the very helpful pysmash library
 * Also, thanks to smash.gg for having an amazing website to grab data from
 
