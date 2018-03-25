@@ -1,4 +1,5 @@
 archive/*
+*.pyc
 __pycache__
 scrapers/*.pyc
 scrapers/__pycache__
