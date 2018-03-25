@@ -34,6 +34,7 @@ class Scraper(object):
             if(constants.verbose):
                 print("Getting Sets")
             sets = []
+
             try:
                 keyword = 'melee-singles'
                 try:
@@ -57,7 +58,7 @@ class Scraper(object):
                 players = smash.tournament_show_players(ggtag, keyword)
 
             except (KeyError, pysmash.exceptions.ResponseError) as err:
-                print("ERROR WITH PYSMASH")
+                print("ERROR WITH PYSMASH", err)
                 continue
 
             for set in sets:
@@ -102,13 +103,12 @@ class Scraper(object):
                     output = winner + ',' + loser + ',' + score + ',' + tourney.name
                 except TypeError:
                     print("An error occured. Skipping this match.")
-                    with open('archive/error_log.txt', "a") as file:
-                        string = "smashggScraper typeError. Tournament - " + tourney.name
-                        if(winner != None):
-                            string += " player -" + winner
-                        if(loser != None):
-                            string += " player -" + loser
-                        file.write(string + '\n')
+                    error = "smashggScraper typeError. Tournament - " + tourney.name
+                    if(winner != None):
+                        error += " player -" + winner
+                    if(loser != None):
+                        error += " player -" + loser
+                    self.logger.logError(error)
                     continue
 
                 print(output)

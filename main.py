@@ -1,7 +1,6 @@
 
 print("RUNNING SMASH SCRAPER")
 
-from lib import hello
 from lib import logging
 from lib import admin
 

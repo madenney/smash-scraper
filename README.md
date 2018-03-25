@@ -10,6 +10,15 @@ Make sure to add this directory to your PATH variables by using the following co
 
 ' export PATH=$PATH:/path/to/directory/smash-scraper/assets '
 
+## Command line arguments
+
+'''
+optional arguments:
+  -v                Verbose Mode.
+  -x                Skip the 'get urls' step
+  -c                Delete all files in /archive before starting
+  -s                Stop after only one page of URLs (for testing purposes)
+'''
 
 ## Deployment
 
