@@ -1,0 +1,11 @@
+archive/*
+__pycache__
+scrapers/*.pyc
+scrapers/__pycache__
+lib/*.pyc
+lib/__pycache__
+lib/pysmash/*.pyc
+lib/pysmash/__pycache__
+backupArchive
+archive/*
+geckodriver.log
