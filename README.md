@@ -12,13 +12,13 @@ Make sure to add this directory to your PATH variables by using the following co
 
 ## Command line arguments
 
-'''
+<pre>
 optional arguments:
   -v                Verbose Mode.
   -x                Skip the 'get urls' step
   -c                Delete all files in /archive before starting
   -s                Stop after only one page of URLs (for testing purposes)
-'''
+</pre>
 
 ## Deployment
 

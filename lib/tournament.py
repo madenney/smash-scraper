@@ -4,7 +4,6 @@ from lib import helper
 class Tournament(object):
 
     def __init__(self, title = False, url = False, date = False, location = False, entrants = False):
-
         if(title != False):
             title = helper.removeCommas(title)
 
@@ -36,13 +35,14 @@ class Tournament(object):
         return string
 
     def parse(self, string):
-        s = string.split()
+        s = string.split(",")
         self.title = s[0]
         self.url = s[1]
         self.date = s[2]
         self.location = s[3]
         if len(s) >= 5:
             self.entrants = s[4]
+        return self
 
     def setEntrants(self, entrants):
         self.entrants = entrants

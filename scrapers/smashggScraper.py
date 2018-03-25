@@ -21,7 +21,6 @@ class Scraper(object):
     def getMatches(self):
 
         tourneys = self.logger.getTourneys()
-
         
         tourneySets = []
         for tourney in tourneys:
@@ -88,7 +87,6 @@ class Scraper(object):
 
                 # Get winner tag
                 for player in players:
-                    #print(winner_id, ' --- ', player['entrant_id'])
                     if winner_id == player['entrant_id']:
                         winner = player['tag']
                         break
@@ -100,10 +98,10 @@ class Scraper(object):
                         break
 
                 try:
-                    output = winner + ',' + loser + ',' + score + ',' + tourney.name
+                    output = winner + ',' + loser + ',' + score + ',' + tourney.title
                 except TypeError:
                     print("An error occured. Skipping this match.")
-                    error = "smashggScraper typeError. Tournament - " + tourney.name
+                    error = "smashggScraper typeError. Tournament - " + tourney.title
                     if(winner != None):
                         error += " player -" + winner
                     if(loser != None):
@@ -199,5 +197,5 @@ class Scraper(object):
                 count = 0
                 driver.get(ggLink + str(i))
 
+        driver.quit()
         self.logger.addTourneysToFile(tourneys)
-

@@ -73,7 +73,7 @@ class Logger(object):
 
 
     # I'm fully aware of how cpu intensive this can be
-    def addSetstoFile(self, sets, tournament):
+    def addSetsToFile(self, sets, tournament):
 
         # Make array of unscraped
         unscraped = []
@@ -109,10 +109,10 @@ class Logger(object):
 
     def getTourneys(self):
         with open(self.unscrapedTourneyLog, "r") as file:
-            urls = []
+            tourneys = []
             for line in file.readlines():
-                urls.append( line[line.index(","):-1])
-            return urls
+                tourneys.append( t.Tournament().parse(line[:-1]) )
+            return tourneys
 
 
     def printLastLog(self):
